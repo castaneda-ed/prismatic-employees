@@ -6,5 +6,55 @@ GET {{host}}/
 ### GET /employees
 GET {{host}}/employees
 
+### Add new employee
+POST {{host}}/employees
+Content-Type: application/json
+
+{
+ "name": "molinguito"
+}
+
+### Incorrectly a new employee
+POST {{host}}/employees/
+Content-Type: application/json
+
+{
+  "neme": "!Filberto"
+}
+
 ### Get existing employee
 GET {{host}}/employees/5
+
+### Get a not existing employee
+GET {{host}}/employees/200
+
+### Delete existing employee
+DELETE  {{host}}/employees/22
+
+### Delete non existing employee
+DELETE  {{host}}/employees/200
+
+### Update employee
+PUT {{host}}/employees/2
+Content-Type: application/json
+
+{
+  "name": "Updated nsecond nameame"
+}
+
+### Update nonexistent employee
+PUT {{host}}/employees/200
+Content-Type: application/json
+
+{
+  "name": "Bad Updated name"
+}
+
+### Incorrectly update book
+PUT {{host}}/books/3
+Content-Type: application/json
+
+{
+  "tile": "Wrong Updated Book"
+}
+
